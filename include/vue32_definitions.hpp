@@ -17,7 +17,7 @@ String device_fw_version = ESCAPEQOUTE(BUILD_TAG);
 
 // zona configuracion dispositivo
 char device_id[30];       // id del dispositivo
-char Device_name[30];     // nombre del dispositivo
+char device_name[30];     // nombre del dispositivo
 u_int16_t device_restart; // numero de reinicios
 char device_user[15];     // usuario para acceso servidor web
 char device_password[15]; // pass del usuario servidor web
@@ -35,16 +35,16 @@ char wifi_dns_primary[16];   // dir ipv4 dns primario
 char wifi_dns_secondary[16]; // dir ipv4 dns secundario
 
 // zona configuracion wifi modo AP
-char ap_ssid[63];   //nombre ssid modo AP
-char ap_password[63];// pass modo AP minimo 8 NULL
-int ap_channel;    // canal AP 1 --13
-int ap_visibility; // 0 visible 1 oculto
-int ap_connect;    // numero de conexiones en el AP max 8 conexiones ESP32
+char ap_ssid[63];     // nombre ssid modo AP
+char ap_password[63]; // pass modo AP minimo 8 NULL
+int ap_channel;       // canal AP 1 --13
+int ap_visibility;    // 0 visible 1 oculto
+int ap_connect;       // numero de conexiones en el AP max 8 conexiones ESP32
 
 // zona configuracion MQTT
 //-----------------------
 boolean mqtt_enabled;
-char mwtt_server[39];
+char mqtt_server[39];
 int mqtt_port;
 boolean mqtt_retain;
 int mqtt_qos;
@@ -56,7 +56,7 @@ char mqtt_sendTopic[150];
 char mqtt_commandTopic[150];
 char mqtt_willTopic[150];
 char mqtt_willMessage[63];
-int mqtt_willQos;
+int mqtt_willQoS;
 boolean mqtt_willRetain;
 boolean mqtt_time_send;
 int mqtt_time_interval;
@@ -67,17 +67,17 @@ boolean mqtt_status_send;
 #define Restart_Address Start_Address + sizeof(int)
 
 // otros
-float TemperatureC, temperatureF;
+float temperatureC, temperatureF;
 
 // relays
-bool RELAY1_STATUS; //gpio32 estado relay 1
-bool RELAY2_STATUS; //gpio33 estado relay 2
+bool RELAY1_STATUS; // gpio32 estado relay 1
+bool RELAY2_STATUS; // gpio33 estado relay 2
 
 // PWM
-const int freq = 1000;      //frecuencia de trabajo
-const int ledChannel = 0;   //definicion del canal
-const int resolution = 8;   // 8 bits 255
-int dim;                    //valor del dimer a enviar 
+const int freq = 1000;    // frecuencia de trabajo
+const int ledChannel = 0; // definicion del canal
+const int resolution = 8; // 8 bits 255
+int dim;                  // valor del dimer a enviar
 
 // firmware
 size_t content_len;
